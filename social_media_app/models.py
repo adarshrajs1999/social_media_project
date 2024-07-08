@@ -5,8 +5,10 @@ from django.contrib.auth.models import AbstractUser
 
 
 class User_model(AbstractUser):
-    is_moderator = models.BooleanField(default = 0)
     is_user = models.BooleanField(default = 0)
+    is_moderator = models.BooleanField(default = 0)
+
+
 
 
 
