@@ -4,6 +4,6 @@ from social_media_app import views
 urlpatterns = [
     path('', views.home, name = 'home'),
     path('dash/',views.dash, name = 'dash'),
-    path('user_register/', views.user_register, name = 'user_register')
+   
     
 ]

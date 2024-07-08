@@ -1,21 +1,12 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 
 
+class User_model(AbstractUser):
+    is_moderator = models.BooleanField(default = 0)
+    is_user = models.BooleanField(default = 0)
 
-class Social_media_user(models.Model):
-    user = models.ForeignKey(User,on_delete=models.CASCADE)
-    name = models.CharField(max_length=250)
-    email = models.EmailField()
-    phone_number = models.CharField(max_length=250)
-    address = models.TextField()
-    is_moderator = models.BooleanField(default = True)
-
-
-class Moderator(models.Model):
-    social_media_user = models.ForeignKey(Social_media_user,on_delete=models.CASCADE)
-    
 
 
